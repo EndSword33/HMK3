@@ -11,6 +11,13 @@ HM3/
 │   ├──ROMFS\px4fmu_common\init.d-posix\airframes/      #
 │   │   ├──4100_gz_a_100/                               # drone parameters file
 │   │   └──CMakeLists.txt/                              # updated CMakeLists
+│   ├──Tools\simulation\gz\models\a_100                 #
+│   │   ├──LICENSE/                                     # 
+│   │   ├──materials/                                   # 
+│   │   ├──meshes/                                      # 
+│   │   ├──model.config/                                #
+│   │   ├──model.sdf/                                   # drone structure file
+│   │   └──thumbnails/                                  # 
 │   └──src\modules\uxrce_dds_client/ 
 │       └──dds_topics.yaml/                             # modified file, necessary for 1.b
 └── aerial_robotics/                                    # 
@@ -28,7 +35,7 @@ HM3/
 ---
      	
      	
-# 🦾 HM2 Setup & Usage Guide
+# 🦾 HM3 Setup & Usage Guide
 
 To ensure the correct functioning of the assignment, the following packages must be installed and properly integrated into the ROS 2 workspace:
 
@@ -44,8 +51,9 @@ Below are the recommended installation steps for a standard Linux environment.
 ```bash
 git clone https://github.com/PX4/PX4-Autopilot
 git clone https://github.com/PX4/px4_msgs
----
 ```
+---
+
 ## 🚁 1a. Custom Drone
 
 We developed a new drone model using the x500 platform as our reference. Our version (a_100) provides a schematic representation of a drone’s structural layout: it consists of a pair of intersecting bars connected to the motors and to a central body. To initiate the flight simulation with the a_100 drone, the following commands must be executed in two separate terminals: one opened in ros2_ws-/src/PX4-Autopilot, and the other outside the workspace, which is required to launch the ground control system.
@@ -100,5 +108,3 @@ make px4_sitl gz_a_100
 ros2 run offboard_rl trajectory_planner
 ```
 ---
-
-
