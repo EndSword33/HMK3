@@ -43,7 +43,6 @@ px4_msgs
 
 PX4-Autopilot
 
-Below are the recommended installation steps for a standard Linux environment.
 ---
 
 ## 🚀 0. Install All Necessary Libraries
